@@ -1,0 +1,28 @@
+1.程序运行环境:
+	操作系统：Ubuntu
+	开发语言：python 2.7 
+	数据库：Virtuoso（影视本体数据库）
+2.python第三方package：
+	jieba,marisa_trie,nltk（pip安装）
+3.数据库连接配置
+	1)安装Virtuoso driver(apt-get 安装)
+	2)安装pyodbc(apt-get install)
+	3)在 /etc/odbcinst.ini 添加driver:
+    [VirtuosoODBC]
+    Description     = Virtuoso
+    Driver          = /usr/lib64/virtodbc_r.so(注意virtuoso driver安装的路径)
+    Driver64        = /usr/lib64/virtodbc_r.so
+    在 /etc/odbc.ini中添加DSN
+    [Movie]
+    Drvier         = VirtuosoODBC
+    Drvier64       = VirtuosoODBC
+    Address        = 10.1.1.189:1111
+4.数据输入要求：
+	1.评论数据按照所评论的影视作品分别保存
+	2.一个影视作品为一个目录，目录名为：
+		作品名称-movie-id(movie-id可以在影视本体库中检索)，如：银河护卫队-dt10019628
+	3.评论数据以json格式保存（本程序只对"content"部分的评论进行entity linking）
+5.程序调用格式：
+	python linking.py input_dir output_dir
+	（input_dir 和 output_dir都要以/结尾，如：python linking.py ./data/input/ ./data/output/）
+	

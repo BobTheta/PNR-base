@@ -1,0 +1,2 @@
+document_id,length,extracted_mentions,candidate_entities,duplicate_removal_candidate_entities,linked_mentions,total_running_time,cut_words_time1,cut_words_time2,get_obj_property,calculate_sim,append_mentions_time,get_entity_time,access_db_time,access_db_times
+1,1637,48,48,21,38,15.2609,0.0498,0.0000,0.0000,0.0000,0.0015,0.0012,15.2052,297
